@@ -191,6 +191,18 @@ export function rollSum(expr: string, opts: SumOpts = {}): SumResult {
  */
 export function resolveInlineRolls(text: string, rng: RNG = defaultRng): string {
   if (!text.includes('[[')) return text
+  // [img=주소] 안의 [[식]] 은 [roll=…] 대신 숫자만 넣는다(롤20식 랜덤 이미지: https://…/card_[[1d6]].png).
+  // [roll=…] 마크업이 주소에 들어가면 첫 ']' 에서 주소가 끊겨 이미지가 깨진다. 식 검증은 아래와 같다.
+  text = text.replace(/\[img=((?:[^[\]]|\[\[[^[\]]{1,60}\]\])*)\]/g, (full, inner: string) => {
+    if (!inner.includes('[[')) return full
+    const url = inner.replace(/\[\[([^[\]]{1,60})\]\]/g, (f, raw: string) => {
+      const expr = raw.trim()
+      if (!/^[\d\s+\-*/dDkKhHlL()]+$/.test(expr) || !/\d*d[1-9]\d*/i.test(expr)) return f
+      const { rolls, total } = rollExpr(expr, rng)
+      return rolls.length ? String(total) : f
+    })
+    return `[img=${url}]`
+  })
   return text.replace(/\[\[([^[\]]{1,60})\]\]/g, (full, raw: string) => {
     const expr = raw.trim()
     if (!/^[\d\s+\-*/dDkKhHlL()]+$/.test(expr) || !/\d*d[1-9]\d*/i.test(expr)) return full // 주사위 식(안전 문자·1면 이상)만 치환
