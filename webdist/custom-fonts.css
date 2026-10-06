@@ -17,3 +17,7 @@
 @font-face { font-family: 'Galmuri11'; src: url('/fonts/Galmuri11-Bold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
 @font-face { font-family: 'Galmuri11-Bold'; src: url('/fonts/Galmuri11-Bold.woff2') format('woff2'); font-weight: 400 700; font-display: swap; }
 @font-face { font-family: 'Galmuri11-Condensed'; src: url('/fonts/Galmuri11-Condensed.woff2') format('woff2'); font-weight: 400 700; font-display: swap; }
+
+/* 조선일보명조 */
+@font-face { font-family: 'ChosunilboNM'; src: url('/fonts/ChosunNm.woff') format('woff'); font-weight: 400; font-display: swap; }
+@font-face { font-family: '조선일보명조'; src: url('/fonts/ChosunNm.woff') format('woff'); font-weight: 400; font-display: swap; }
