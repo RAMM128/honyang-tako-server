@@ -21,3 +21,6 @@
 /* 조선일보명조 */
 @font-face { font-family: 'ChosunilboNM'; src: url('/fonts/ChosunNm.woff') format('woff'); font-weight: 400; font-display: swap; }
 @font-face { font-family: '조선일보명조'; src: url('/fonts/ChosunNm.woff') format('woff'); font-weight: 400; font-display: swap; }
+
+/*Fontdiner Swanky-영문전용*/
+@font-face { font-family: 'Fontdiner Swanky'; src: url('/fonts/FontdinerSwanky-Regular.woff') format('woff'); font-weight: 400; font-display: swap; }
