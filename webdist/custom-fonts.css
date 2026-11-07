@@ -24,3 +24,12 @@
 
 /*Fontdiner Swanky-영문전용*/
 @font-face { font-family: 'Fontdiner Swanky'; src: url('/fonts/FontdinerSwanky-Regular.woff') format('woff'); font-weight: 400; font-display: swap; }
+
+/* 샤우팅체 */
+@font-face { font-family: 'Shouting'; src: url('/fonts/Callifont-Medium.woff') format('woff'); font-weight: normal; font-display: swap; }
+@font-face { font-family: '샤우팅'; src: url('/fonts/Callifont-Medium.woff') format('woff'); font-weight: normal; font-display: swap; }
+
+/* 온글잎 소피 *
+@font-face { font-family: 'OwnglyphSophie'; src: url('/fonts/온글잎-소피.woff') format('woff'); font-weight: 400; font-display: swap;}
+@font-face { font-family: '온글잎소피'; src: url('/fonts/온글잎-소피.woff') format('woff'); font-weight: 400; font-display: swap;}
+
